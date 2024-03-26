@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Inboxes</h1>
+
+<br>
+<%= search_form_for @q do |f| %>
+<%= f.label :name_cont %>
+<%= f.search_field :name_cont %>
+ <%= f.submit %>
+<% end %>
+
+<%= sort_link @q, :messages_count, 'Popular' %>
+<%= sort_link @q, :created_at, 'Fresh' %>
+
+<%= link_to 'Clear search', request.path if request.query_parameters.any? %>
+
+

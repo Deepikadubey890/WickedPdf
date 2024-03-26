@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  full_name: MyString
+  address: MyString
+  email: MyString
+  phone: 1
+  name: MyString
+  address: MyString
+  email: MyString
+  phone: MyString
+  status: MyString
+  discount: 9.99
+  vat: 9.99
+
+two:
+  full_name: MyString
+  address: MyString
+  email: MyString
+  phone: 1
+  name: MyString
+  address: MyString
+  email: MyString
+  phone: MyString
+  status: MyString
+  discount: 9.99
+  vat: 9.99

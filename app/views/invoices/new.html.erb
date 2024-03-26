@@ -1,0 +1,66 @@
+<!-- app/views/invoices/new.html.erb -->
+
+<h1>New Invoice</h1>
+
+<%= form_with(model: @invoice, url: invoices_path, method: :post) do |form| %>
+  <% if @invoice.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@invoice.errors.count, "error") %> prohibited this invoice from being saved:</h2>
+
+      <ul>
+        <% @invoice.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div data-mdb-input-init class="form-outline mb-4">
+    <%= form.label :full_name %>
+    <%= form.text_field :full_name, id: "form1Example1",class: "form-control" %>
+  </div>
+
+  <div data-mdb-input-init class="form-outline mb-4">
+    <%= form.label :email %>
+    <%= form.text_field :email,id: "form1Example1",class: "form-control" %>
+  </div>
+
+
+  <div data-mdb-input-init class="form-outline mb-4">
+      <%= form.label :name %>
+      <%= form.text_field :name,id: "form1Example1",class: "form-control" %>
+   </div>
+
+  <div data-mdb-input-init class="form-outline mb-4">
+      <%= form.label :phone %>
+      <%= form.text_field :phone,id: "form1Example1",class: "form-control" %>
+    </div>
+
+    
+  <div data-mdb-input-init class="form-outline mb-4">
+      <%= form.label :address %>
+      <%= form.text_field :address,id: "form1Example1",class: "form-control" %>
+    </div>
+
+
+    
+  <div data-mdb-input-init class="form-outline mb-4">
+      <%= form.label :status %>
+      <%= form.text_field :status,id: "form1Example1",class: "form-control" %>
+    </div>
+
+
+   
+  <div data-mdb-input-init class="form-outline mb-4">
+      <%= form.label :pdf_file, 'PDF File' %>
+      <%= form.file_field :pdf_file %>
+     </div>
+
+
+    <div class="actions">
+      <%= form.submit 'Create Invoice' %>
+    </div>
+
+  <% end %>
+
+<%= link_to 'Back', invoices_path, class: 'btn btn-primary'%>

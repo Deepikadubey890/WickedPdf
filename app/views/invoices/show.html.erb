@@ -1,0 +1,20 @@
+<!-- app/views/invoices/show.html.erb -->
+
+<h1>Invoice Details</h1>
+
+<div>
+	 
+  <strong>Invoice ID:</strong> <%= @invoice.id %><br>
+  <strong>FullName:</strong> <%= @invoice.full_name %><br>
+  <strong>Address</strong> <%= @invoice.address %><br>
+  <strong>Email</strong> <%= @invoice.email %><br>
+  <strong>Contact No.</strong><%= @invoice.phone %><br>
+  <strong>Status:</strong> <%= @invoice.status %><br>
+  <strong>Pdf_File:</strong> 
+  <% if @invoice.pdf_file.attached? %>
+  <iframe src="<%= rails_blob_path(@invoice.pdf_file, disposition: 'inline') %>" width="100" height="80" frameborder="0"></iframe>
+	<% else %>
+	  <p>No PDF file attached</p>
+	<% end %>
+</div>
+
